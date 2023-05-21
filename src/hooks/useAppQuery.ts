@@ -1,10 +1,10 @@
-import { useQuery, UseQueryResult, UseQueryOptions } from "react-query";
+import { useQuery, UseQueryOptions, UseQueryResult } from "react-query";
 import { client } from "../../lib/client";
 
-const useAppQuery = (
+const useAppQuery = <T>(
   url: string,
-  reactQueryOptions?: object
-): UseQueryResult<UseQueryOptions, Error> => {
+  reactQueryOptions?: UseQueryOptions<T, Error>
+): UseQueryResult<T, Error> => {
   const fetchQueey = async () => {
     const response = await client.fetch(url);
     if (!response) {
@@ -13,7 +13,7 @@ const useAppQuery = (
     return response;
   };
 
-  return useQuery<UseQueryOptions, Error>(url, fetchQueey, {
+  return useQuery<T, Error>(url, fetchQueey, {
     ...reactQueryOptions,
     refetchOnWindowFocus: true,
   });

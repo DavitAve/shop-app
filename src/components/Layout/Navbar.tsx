@@ -9,6 +9,7 @@ import KonoLogo from "../UI/SVG/KonoLogo";
 import { Link } from "react-router-dom";
 import { menu } from "../../utils/constants";
 import { AppContext, IAppContext } from "../Context/AppContext";
+import { IMenuItem } from "../../interfaces/main";
 
 const Navbar: FunctionComponent = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,20 +52,19 @@ const Navbar: FunctionComponent = () => {
 
   return (
     <div
-      className={`def-case-shadow bg-[#2e2e2e] tr-2 fixed top-0 left-0 w-full ${
+      className={`def-case-shadow bg-[#2e2e2e] tr-2 fixed top-0 left-0 w-full z-50 ${
         navVisiable ? "top-0" : "top-[-100px]"
       }`}
     >
       <div className="def-container text-[#fff]">
         <div className="relative flex items-center justify-between flex-wrap">
-          <Link to="/" className="ml-3">
+          <Link to="/" className="md:ml-0 only:ml-3">
             <KonoLogo />
           </Link>
           <div
-            // menuOpen
             className={`
-            md:relative absolute top-[70px] md:h-auto h-[calc(100vh_-_70px)] tr-2 py-7 px-3 md:w-auto w-full md:bg-transparent bg-[#272727]
-            ${menuOpen ? "left-0 opacity-1" : "left-[-100%] opacity-0"}
+              md:static absolute md:top-0 top-[70px] md:h-auto h-[calc(100vh_-_70px)] tr-2 py-7 px-3 md:w-auto w-full md:bg-transparent bg-[#272727]
+              ${menuOpen ? "left-0 opacity-1" : "left-[-100%]"}
             `}
           >
             <ul className="flex items-center gap-9">
@@ -78,7 +78,7 @@ const Navbar: FunctionComponent = () => {
             </ul>
           </div>
           <div
-            className="burger relative w-9 h-4 mr-3 cursor-pointer md:hidden block"
+            className="burger relative w-9 h-4 md:mr-0 mr-3 cursor-pointer md:hidden block"
             onClick={handleOpenMenu}
           >
             <div className="w-full absolute h-[2px] top-[50%] l-0 translate-y-[-50%] bg-[#0080ff]"></div>

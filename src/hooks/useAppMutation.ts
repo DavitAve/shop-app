@@ -1,4 +1,4 @@
-import { MutationOptions, useMutation } from "react-query";
+import { MutationOptions, useMutation, UseMutationResult } from "react-query";
 import { client } from "../../lib/client";
 interface ApiRequestInterface {
   url: string;
@@ -7,10 +7,10 @@ interface ApiRequestInterface {
   fetchFunction: (url: string, options: RequestInit) => void;
 }
 
-export const useAppMutation = (
+export const useAppMutation = <T>(
   url: string,
   method: string,
-  options: MutationOptions<
+  options?: MutationOptions<
     unknown,
     unknown,
     {
@@ -48,7 +48,7 @@ export const useAppMutation = (
     ...options,
   });
 
-  return mutation;
+  return mutation as { data: T } & UseMutationResult;
 };
 
 const apiRequest = async ({

@@ -1,15 +1,7 @@
-import { useEffect } from "react";
-import { client } from "../../lib/client";
-const HomePage = () => {
-  const getData = async () => {
-    const data = await client.fetch("*[_type == 'product'] ");
-    console.log({ data });
-  };
+import HomeMain from "../components/Home/HomeMain";
 
-  useEffect(() => {
-    getData();
-  }, []);
-  return <div>Home page</div>;
+const HomePage = () => {
+  return <HomeMain />;
 };
 
 export default HomePage;

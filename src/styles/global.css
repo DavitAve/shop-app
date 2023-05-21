@@ -7,3 +7,23 @@
   margin: 0;
   padding: 0;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#root > *:nth-child(2) {
+  flex: 1 1 auto;
+}
+
+.def-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1100px) {
+  .def-container {
+    padding: 0 10px;
+  }
+}

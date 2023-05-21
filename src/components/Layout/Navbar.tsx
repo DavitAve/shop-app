@@ -55,7 +55,7 @@ const Navbar: FunctionComponent = () => {
         navVisiable ? "top-0" : "top-[-100px]"
       }`}
     >
-      <div className="def-container py-5 text-[#fff]">
+      <div className="def-container text-[#fff]">
         <div className="relative flex items-center justify-between flex-wrap">
           <Link to="/" className="ml-3">
             <KonoLogo />

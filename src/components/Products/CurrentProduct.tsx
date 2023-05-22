@@ -8,6 +8,7 @@ import { IProduct } from "../../interfaces/product";
 import BackTo from "../UI/BackTo";
 import Loading from "../UI/Loading";
 import SimilaryProducts from "./SimilaryProducts";
+import CurrentProdPriceChart from "./CurrentProdPriceChart";
 
 const CurrentProduct: FunctionComponent = () => {
   const currentId = useParams().id;
@@ -59,6 +60,7 @@ const CurrentProduct: FunctionComponent = () => {
         ) : (
           <Loading />
         )}
+        <CurrentProdPriceChart data={product?.price_list} loading={isLoading} />
         <SimilaryProducts product={product} />
       </div>
     </div>

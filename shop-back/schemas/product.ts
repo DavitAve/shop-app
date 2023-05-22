@@ -61,5 +61,19 @@ export default {
         ],
       },
     },
+    {
+      name: 'price_list',
+      title: 'Price list',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {type: 'date', name: 'date', title: 'Date'},
+            {type: 'number', name: 'price', title: 'Price'},
+          ],
+        },
+      ],
+    },
   ],
 }

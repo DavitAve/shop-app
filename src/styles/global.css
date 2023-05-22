@@ -107,7 +107,34 @@ ul {
 .similar-item:hover .similar-item-img {
   transform: scale(1.2);
 }
+.dataTable-th * {
+  transition: 0.2s ease;
+}
+.dataTable-th svg {
+  fill: #979797;
+  opacity: 0;
+}
+.dataTable-th.min svg,
+.dataTable-th.max svg {
+  opacity: 1;
+}
+.dataTable-th.max:hover svg > g > g > path:last-child,
+.dataTable-th.min:hover svg > g > g > path:first-child,
+.dataTable-th.max svg > g > g > path:first-child,
+.dataTable-th.min svg > g > g > path:last-child {
+  fill: #0080ff;
+}
+.dataTable-th.max:hover svg > g > g > path:first-child,
+.dataTable-th.min:hover svg > g > g > path:last-child {
+  opacity: 0.5;
+}
 
+.dataTable-th:hover svg {
+  opacity: 1;
+}
+.dataTable-th:hover svg > g > g > path:first-child {
+  fill: #0080ff;
+}
 @media only screen and (max-width: 1100px) {
   .def-container {
     padding-left: 10px;

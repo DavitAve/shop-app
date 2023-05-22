@@ -10,6 +10,7 @@ export interface IProduct {
   type: string;
   _updatedAt: string;
   model: string;
+  price_list: IPriceListItem[];
 }
 
 interface IProductImage {
@@ -21,4 +22,9 @@ interface IProductImage {
 interface IProductAsset {
   _ref: string;
   _type: string;
+}
+export interface IPriceListItem {
+  _key: string;
+  date: string;
+  price: number;
 }

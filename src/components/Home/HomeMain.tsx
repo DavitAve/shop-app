@@ -1,5 +1,6 @@
 import React from "react";
 import TopProducts from "./TopProducts";
+import AllProducts from "../Products/AllProducts";
 
 const HomeMain: React.FunctionComponent = () => {
   return (
@@ -9,6 +10,7 @@ const HomeMain: React.FunctionComponent = () => {
           <h2>Home page</h2>
         </div>
         <TopProducts />
+        <AllProducts />
       </div>
     </>
   );

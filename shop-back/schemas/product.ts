@@ -39,15 +39,41 @@ export default {
       },
     },
     {
+      name: 'model',
+      title: 'Model',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'T-shirt', value: 'tshirt'},
+          {title: 'Shirt', value: 'shirt'},
+          {title: 'Polo', value: 'polo'},
+        ],
+      },
+    },
+    {
       name: 'gender',
       title: 'Gender',
       type: 'string',
       options: {
         list: [
-          {title: 'Male', value: 'male'},
-          {title: 'Female', value: 'female'},
+          {title: 'Man', value: 'man'},
+          {title: 'Women', value: 'women'},
         ],
       },
+    },
+    {
+      name: 'price_list',
+      title: 'Price list',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {type: 'date', name: 'date', title: 'Date'},
+            {type: 'number', name: 'price', title: 'Price'},
+          ],
+        },
+      ],
     },
   ],
 }

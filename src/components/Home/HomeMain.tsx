@@ -1,12 +1,19 @@
 import React from "react";
-import { client } from "../../../lib/client";
+import TopProducts from "./TopProducts";
+import AllProducts from "../Products/AllProducts";
 
 const HomeMain: React.FunctionComponent = () => {
-  const getData = async () => {
-    const data = await client.fetch("*[_type == 'product'] ");
-    console.log({ data });
-  };
-  return <div>Home page</div>;
+  return (
+    <>
+      <div className="def-container">
+        <div>
+          <h2>Home page</h2>
+        </div>
+        <TopProducts />
+        <AllProducts />
+      </div>
+    </>
+  );
 };
 
 export default HomeMain;

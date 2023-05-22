@@ -29,7 +29,6 @@
   padding-top: 90px;
 }
 #root > *:nth-child(2) {
-  height: 200vh;
   flex: 1 1 auto;
 }
 #root:has(._noScroll) {
@@ -45,7 +44,7 @@ ul {
 }
 
 .def-container {
-  max-width: 1100px;
+  max-width: 1360px;
   margin: 0 auto;
 }
 
@@ -135,7 +134,7 @@ ul {
 .dataTable-th:hover svg > g > g > path:first-child {
   fill: #0080ff;
 }
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1360px) {
   .def-container {
     padding-left: 10px;
     padding-right: 10px;
